@@ -11,19 +11,6 @@ sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-set
 echo "\n${BRed}Do you want to install the PHP Verification Tools? (Y for yes or N for no)${NC}"
 read PHPPACKAGES
 
-if [ "$PHPPACKAGES" == "Y" ]; then
-  echo "\n${BBlue}Installing necessary PHP packages${NC}"
-  sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/vendor-packages)"
-
-  echo "\n${BBlue}Installing verification tools' settings files${NC}"
-  sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/verification-tools/run)"
-
-  echo "\n${BBlue}Installing necessary GitHub Actions${NC}"
-  sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/actions/run)"
-
-  sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/laravel-sail)"
-fi
-
 echo "\n${BBlue}Installing workspace directory${NC}"
 if [ ! -d './workspace' ]
 then
